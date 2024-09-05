@@ -7,7 +7,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: const Center(
-        child: Text('Profile'),
+        child: Text('AQUI EL TEXTO'),
       ),
     );
   }
