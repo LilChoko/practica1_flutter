@@ -48,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: const Drawer(),
       endDrawer: const Drawer(),
       bottomNavigationBar: ConvexAppBar(
+        backgroundColor: const Color.fromARGB(255, 199, 157, 141),
         items: const [
           TabItem(icon: Icons.home, title: 'Home'),
           TabItem(icon: Icons.person, title: 'Profile'),
@@ -63,12 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               GlobalValues.banThemeDark.value = false;
             },
-            child: Icon(Icons.light_mode)),
+            child: const Icon(Icons.light_mode)),
         FloatingActionButton.small(
             onPressed: () {
               GlobalValues.banThemeDark.value = true;
             },
-            child: Icon(Icons.dark_mode))
+            child: const Icon(Icons.dark_mode))
       ]),
     );
   }
