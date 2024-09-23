@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practica_1/screens/home_screen.dart';
 import 'package:practica_1/screens/login_screen.dart';
+import 'package:practica_1/screens/movies_screen.dart';
 import 'package:practica_1/settings/global_values.dart';
 import 'package:practica_1/settings/theme_settings.dart';
 
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
             theme:
                 value ? ThemeSettings.darkTheme() : ThemeSettings.lightTheme(),
             home: const LoginScreen(),
-            routes: {"/home": (context) => const HomeScreen()},
+            routes: {
+              "/home": (context) => const HomeScreen(),
+              "/db": (context) => const MoviesScreen()
+            },
           );
         });
   }

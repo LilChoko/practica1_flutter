@@ -45,8 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
           }
         },
       ),
-      drawer: const Drawer(),
-      endDrawer: const Drawer(),
+      drawer: myDrawer(),
+      //endDrawer: const Drawer(),
       bottomNavigationBar: ConvexAppBar(
         backgroundColor: const Color.fromARGB(255, 199, 157, 141),
         items: const [
@@ -61,16 +61,42 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(key: _key, children: [
         FloatingActionButton.small(
+            heroTag: "btn1",
             onPressed: () {
               GlobalValues.banThemeDark.value = false;
             },
             child: const Icon(Icons.light_mode)),
         FloatingActionButton.small(
+            heroTag: "btn2",
             onPressed: () {
               GlobalValues.banThemeDark.value = true;
             },
             child: const Icon(Icons.dark_mode))
       ]),
+    );
+  }
+
+  Widget myDrawer() {
+    return Drawer(
+      child: ListView(
+        children: [
+          UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                //PREGUNTA DE EXAMEN
+                backgroundImage:
+                    NetworkImage('https://i.pravatar.cc/150?img=3'),
+              ),
+              accountName: Text('Leonardo Torres'),
+              accountEmail: Text('ilove.lilchoko@gmail.com')),
+          ListTile(
+            onTap: () => Navigator.pushNamed(context, '/db'),
+            title: Text('Movies List'),
+            subtitle: Text('Database Movies'),
+            leading: Icon(Icons.movie),
+            trailing: Icon(Icons.chevron_right),
+          )
+        ],
+      ),
     );
   }
 }
